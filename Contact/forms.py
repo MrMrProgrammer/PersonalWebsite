@@ -36,7 +36,7 @@ class ContactForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Enter your message here...',
             'id': "message",
-            # "rows": "10",
+            "rows": "10",
         })
     )
 

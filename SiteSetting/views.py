@@ -19,9 +19,4 @@ def Resume(request):
     return render(request, 'SiteSetting/resume.html')
 
 
-def Projects(request):
-    return render(request, 'SiteSetting/projects.html')
 
-
-def Contact(request):
-    return render(request, 'SiteSetting/contact.html')
