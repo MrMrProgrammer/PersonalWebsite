@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 
-def get_message(request):
-    
+def Contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -12,8 +11,8 @@ def get_message(request):
     else:
         form = ContactForm()
 
-    return render(request, 'SiteSetting/templates/Contact/contact.html', {'form': form})
+        context = {
+            'form': form,
+        }
 
-
-def Contact(request):
-    return render(request, 'SiteSetting/../Contact/templates/Contact/contact.html')
+    return render(request, 'Contact/contact.html', context)
