@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Contact',
     'Project',
     'Resume',
+    'Log',
 
     'django_jalali',
 ]
