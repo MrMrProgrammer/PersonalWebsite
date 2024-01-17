@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'Contact',
     'Project',
     'Resume',
+
+    'django_jalali',
 ]
 
 MIDDLEWARE = [
