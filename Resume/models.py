@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django_jalali.db import models as jmodels
 
 
 class Skill(models.Model):
@@ -53,3 +54,35 @@ class Experience(models.Model):
 
     class Meta:
         db_table = 'Experience'
+
+
+class Education(models.Model):
+    from_date = models.CharField(max_length=50)
+    end_date = models.CharField(max_length=50)
+    is_present = models.BooleanField(default=False)
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=50)
+    grade = models.CharField(max_length=100)
+    description = models.TextField()
+
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'Education'
+        verbose_name = 'Education'
+        verbose_name_plural = 'Education'
+
+
+class ResumeFile(models.Model):
+    datetime = jmodels.jDateTimeField(auto_now=True)
+    file = models.FileField(upload_to='ResumeFiles/')
+
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'ResumeFile'
+        verbose_name = 'Resume File'
+        verbose_name_plural = 'Resume Files'
