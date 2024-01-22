@@ -33,15 +33,25 @@
                                     </h3>
                                 </div>
 
-                                <div class="row row-cols-1 row-cols-md-3 mb-4">
-
-                                    {% for language in languages %}
-                                        <div class="col mb-4 mb-md-0" style="padding-bottom: 20px">
-                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{ language.language }}</div>
+                                {% for language in languages %}
+                                    <div class="row text-center">
+                                        <div class="col-md-4 mb-4 mb-md-0 d-flex align-items-center justify-content-center"
+                                             style="padding-bottom: 20px">
+                                            <div class="bg-light rounded-4 p-3 h-100" style="width: 100%">{{ language.language }} ({{ language.percent }}%)
+                                            </div>
                                         </div>
-                                    {% endfor %}
 
-                                </div>
+                                        <div class="col-md-8 mb-4 mb-md-0" style="padding-bottom: 20px">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                <progress id="file" value="{{ language.percent }}" max="100" style="width: 100%;"> 32%
+                                                </progress>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+
+                            <br/>
 
                             </div>
 
@@ -52,7 +62,7 @@
                                     <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
                                         <i class="bi bi-tools"></i></div>
                                     <h3 class="fw-bolder mb-0"><span
-                                            class="text-gradient d-inline">Professional Skills</span></h3>
+                                            class="text-gradient d-inline">Technologies</span></h3>
                                 </div>
 
                                 <div class="row row-cols-1 row-cols-md-3 mb-4">
