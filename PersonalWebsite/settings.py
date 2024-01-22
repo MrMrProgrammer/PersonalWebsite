@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Log',
 
     'django_jalali',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
