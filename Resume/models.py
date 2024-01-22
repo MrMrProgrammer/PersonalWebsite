@@ -26,6 +26,10 @@ class Language(models.Model):
         validators=[MinValueValidator(0), MaxValueValidator(10)],
         blank=True, null=True,
     )
+    percent = models.IntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(100)],
+    )
+
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
