@@ -37,6 +37,7 @@ class ContactForm(forms.ModelForm):
             'placeholder': 'Enter your message here...',
             'id': "message",
             "rows": "10",
+            "style": "height: 133px;"
         })
     )
 
