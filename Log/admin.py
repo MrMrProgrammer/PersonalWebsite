@@ -3,7 +3,7 @@ from . import models
 
 
 class showLogs(admin.ModelAdmin):
-    list_display = ["ip", "date", "time", "agent", "language"]
+    list_display = ["ip", "count", "date", "time", "agent", "language", "client_name"]
 
 
 admin.site.register(models.Logger, showLogs)
