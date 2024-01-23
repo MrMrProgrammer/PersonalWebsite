@@ -36,13 +36,31 @@ def getLanguage(request):
 
 
 def saveLog(request):
-    try:
+    ip = getIp(request)
+    has_visited = Logger.objects.filter(ip__iexact=ip)
+
+    if has_visited:
+        obj: Logger = Logger.objects.filter(ip=ip).first()
+        obj.date = getDate()
+        obj.time = getTime()
+        obj.count += 1
+        obj.save()
+
+    else:
         date = getDate()
         time = getTime()
-        ip = getIp(request)
         agent = getAgent(request)
         language = getLanguage(request)
         logObject = Logger(date=date, time=time, ip=ip, agent=agent, language=language)
         logObject.save()
-    except:
-        pass
+
+    # try:
+    #     date = getDate()
+    #     time = getTime()
+    #     ip = getIp(request)
+    #     agent = getAgent(request)
+    #     language = getLanguage(request)
+    #     logObject = Logger(date=date, time=time, ip=ip, agent=agent, language=language)
+    #     logObject.save()
+    # except:
+    #     pass
