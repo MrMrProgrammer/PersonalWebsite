@@ -7901,7 +7901,7 @@ textarea.form-control-lg {
   padding-left: 1.5rem !important;
 }
 
-.px-5 {
+.px-5-new {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
 }
@@ -11731,4 +11731,8 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+}
+
+.margin-0 {
+  margin: 0;
 }
