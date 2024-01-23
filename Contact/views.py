@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
@@ -7,7 +8,8 @@ def Contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Home')
+            return HttpResponse('Thank you for')
+            # return redirect('Home')
     else:
         form = ContactForm()
 
