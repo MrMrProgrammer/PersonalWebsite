@@ -1,4 +1,5 @@
 from django.db import models
+from django_jalali.db import models as jmodels
 
 
 class Contact(models.Model):
@@ -6,7 +7,7 @@ class Contact(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=100)
     message = models.TextField()
-    datetime = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    datetime = jmodels.jDateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name
